@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export
 var SPEED = 150.0
 
+@export
+var MAX_HEALTH = 100
+
+var health = MAX_HEALTH
+
 @onready
 var player: CharacterBody2D = get_node("/root/MainLevel/Player")
 
@@ -22,5 +27,8 @@ func _process(delta: float) -> void:
 	else:
 		$Sprite2D/AnimationPlayer.play("walk_right")
 	
-func take_damage() -> void:
-	print("Ouchies!")
+func take_damage(damage: float) -> void:
+	health -= damage
+	if health <= 0:
+		self.queue_free() # self destruct
+		# TODO: Score
