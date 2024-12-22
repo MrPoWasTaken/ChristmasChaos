@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl81pbiyto3do"]
+[gd_scene load_steps=15 format=3 uid="uid://bl81pbiyto3do"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8ihj0"]
 [ext_resource type="Texture2D" uid="uid://ci6w5nrvgdjdk" path="res://assets/Christmas/santa/santa.png" id="2_8dkp4"]
@@ -165,6 +165,9 @@ _data = {
 "walk_up": SubResource("Animation_fhfmg")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05rk6"]
+size = Vector2(42, 64)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8ihj0")
 
@@ -185,3 +188,10 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DamageCollider" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageCollider"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_05rk6")

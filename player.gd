@@ -4,6 +4,12 @@ extends CharacterBody2D
 @export 
 var SPEED = 300.0
 
+@export
+var MAX_HEALTH = 100
+var health = MAX_HEALTH
+
+@export
+var ENEMY_DPS = 10
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
@@ -11,6 +17,11 @@ func _physics_process(delta: float) -> void:
 	self.velocity = SPEED * direction
 	
 	move_and_slide()
+	
+	for body in %DamageCollider.get_overlapping_bodies():
+		var typed_body: Node2D = body
+		if typed_body.is_in_group("Enemies"):
+			self.take_damage(delta * ENEMY_DPS)
 
 func _input(event):
 	# below code is disgusting btw
@@ -39,3 +50,8 @@ func _input(event):
 		new_bullet.global_rotation = self.get_global_transform_with_canvas().get_origin().direction_to(event.position).angle()
 		
 		self.add_sibling(new_bullet)
+
+func take_damage(damage: float):
+	self.health -= damage
+	if self.health <= 0:
+		print("GAME OVER!!!")
