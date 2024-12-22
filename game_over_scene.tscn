@@ -2,9 +2,16 @@
 
 [ext_resource type="AudioStream" uid="uid://brf4udiy7j5i" path="res://assets/silent night sad.wav" id="1_fesup"]
 
-[node name="GameOverScene" type="Node2D"]
+[node name="GameOverScene" type="CanvasLayer"]
 
 [node name="SilentNightSad" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(-39, -19)
 stream = ExtResource("1_fesup")
 autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 450.0
+offset_top = 254.0
+offset_right = 862.0
+offset_bottom = 490.0
+text = "YOU DIED (tough luck buddy)"

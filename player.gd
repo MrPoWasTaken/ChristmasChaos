@@ -54,4 +54,5 @@ func _input(event):
 func take_damage(damage: float):
 	self.health -= damage
 	if self.health <= 0:
-		print("GAME OVER!!!")
+		# GAME OVER
+		get_tree().change_scene_to_file("res://game_over_scene.tscn")
