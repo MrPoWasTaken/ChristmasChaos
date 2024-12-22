@@ -13,13 +13,13 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _input(event):
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left"):
 		$Icon/AnimationPlayer.play("walk_left")
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right"):
 		$Icon/AnimationPlayer.play("walk_right")
-	elif Input.is_action_just_pressed("ui_up"):
+	elif Input.is_action_pressed("ui_up"):
 		$Icon/AnimationPlayer.play("walk_up")
-	elif Input.is_action_just_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		$Icon/AnimationPlayer.play("walk_down")
 
 	elif Input.is_action_just_released("ui_left"): 

@@ -16,6 +16,11 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+func _process(delta: float) -> void:
+	if (global_position.direction_to(player.global_position).x<0):
+		$Sprite2D/AnimationPlayer.play("walk_left")
+	else:
+		$Sprite2D/AnimationPlayer.play("walk_right")
 	
 func take_damage() -> void:
 	print("Ouchies!")
