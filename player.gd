@@ -21,7 +21,12 @@ func _input(event):
 		$Icon/AnimationPlayer.play("walk_up")
 	elif Input.is_action_just_pressed("ui_down"):
 		$Icon/AnimationPlayer.play("walk_down")
-		
-	if Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_down") or Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_right"):
-		$Icon/AnimationPlayer.play("walk_left")
-		#add idle animation here
+
+	elif Input.is_action_just_released("ui_left"): 
+		$Icon/AnimationPlayer.play("idle_left")
+	elif Input.is_action_just_released("ui_right"):
+		$Icon/AnimationPlayer.play("idle_right")
+	elif Input.is_action_just_released("ui_up"):
+		$Icon/AnimationPlayer.play("idle_up")
+	elif Input.is_action_just_released("ui_down"):
+		$Icon/AnimationPlayer.play("idle_down")
