@@ -9,8 +9,11 @@
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
-offset_right = 1152.0
-offset_bottom = 648.0
+visible = false
+offset_left = -227.0
+offset_top = -71.0
+offset_right = 1273.0
+offset_bottom = 679.0
 color = Color(0.1334, 0.505567, 0.58, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_82n2n")]
