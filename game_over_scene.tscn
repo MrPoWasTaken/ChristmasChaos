@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bemb5dghnjtpg"]
+
+[ext_resource type="AudioStream" uid="uid://brf4udiy7j5i" path="res://assets/silent night sad.wav" id="1_fesup"]
+
+[node name="GameOverScene" type="Node2D"]
+
+[node name="SilentNightSad" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-39, -19)
+stream = ExtResource("1_fesup")
+autoplay = true
