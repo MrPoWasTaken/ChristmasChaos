@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://be1ekd4g1v3g7"]
+[gd_scene load_steps=4 format=3 uid="uid://be1ekd4g1v3g7"]
 
 [ext_resource type="PackedScene" uid="uid://bl81pbiyto3do" path="res://player.tscn" id="1_82n2n"]
-[ext_resource type="PackedScene" uid="uid://c435mtw12neuj" path="res://bullet.tscn" id="1_fm72e"]
 [ext_resource type="PackedScene" uid="uid://cj8i2k0jlfd6i" path="res://enemy.tscn" id="2_iihxm"]
 [ext_resource type="AudioStream" uid="uid://btnltopy5r77p" path="res://assets/alvins bells.wav" id="4_jmsa7"]
 
@@ -26,9 +25,6 @@ position = Vector2(853, 142)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_iihxm")]
 position = Vector2(726, 375)
-
-[node name="Bullet" parent="." instance=ExtResource("1_fm72e")]
-position = Vector2(267, 142)
 
 [node name="AlvinsBells" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_jmsa7")
