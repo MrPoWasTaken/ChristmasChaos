@@ -23,4 +23,5 @@ func _input(event):
 		$Icon/AnimationPlayer.play("walk_down")
 		
 	if Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_down") or Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_right"):
+		$Icon/AnimationPlayer.play("walk_left")
 		#add idle animation here
