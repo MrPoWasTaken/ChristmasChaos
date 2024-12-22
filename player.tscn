@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl81pbiyto3do"]
+[gd_scene load_steps=16 format=3 uid="uid://bl81pbiyto3do"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8ihj0"]
 [ext_resource type="Texture2D" uid="uid://ci6w5nrvgdjdk" path="res://assets/Christmas/santa/santa.png" id="2_8dkp4"]
+[ext_resource type="PackedScene" uid="uid://djdhsvalgwcha" path="res://enemy_spawner.tscn" id="3_udwgu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1alfv"]
 
@@ -195,3 +196,5 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageCollider"]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_05rk6")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("3_udwgu")]
