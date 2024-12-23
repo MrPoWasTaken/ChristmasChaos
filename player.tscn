@@ -202,3 +202,20 @@ shape = SubResource("RectangleShape2D_05rk6")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 volume_db = -30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthDisplay" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 476.0
+offset_bottom = 92.0
+theme_override_colors/default_color = Color(0.878431, 0, 0, 1)
+text = "Health: 0/100"
+
+[node name="KillsDisplay" type="RichTextLabel" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 605.0
+offset_bottom = 82.0
+theme_override_colors/default_color = Color(0.966667, 1, 0, 1)
+text = "
+Kills: 0"

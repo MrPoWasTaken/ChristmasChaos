@@ -53,7 +53,7 @@ func take_damage(damage: float) -> void:
 	
 	if health <= 0:
 		player.kills += 1
-		print("Kills: ", player.kills)
+		player.update_kills_display()
 		
 		# death sound effect
 		# doesn't actually work because this object gets removed (sad)

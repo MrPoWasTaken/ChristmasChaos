@@ -13,6 +13,16 @@ var ENEMY_DPS = 10
 
 var kills = 0
 
+func update_health_display() -> void:
+	# round health to the nearest tenth digit
+	%HealthDisplay.text = "Health: " + str(round(health*10)/10) + "/" + str(MAX_HEALTH)
+	
+func update_kills_display() -> void:
+	%KillsDisplay.text = "\nKills: " + str(kills)
+
+func _ready() -> void:
+	update_health_display()
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	
@@ -73,5 +83,7 @@ func take_damage(damage: float) -> bool:
 		get_tree().change_scene_to_file.call_deferred("res://game_over_scene.tscn")
 		get_tree().current_scene.free()
 		return true
-		
+	
+	self.update_health_display()
+	
 	return false
