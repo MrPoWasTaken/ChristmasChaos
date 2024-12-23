@@ -35,6 +35,18 @@ func _process(delta: float) -> void:
 	
 func take_damage(damage: float) -> void:
 	health -= damage
+	
+	# damage sound effect
+	const DAMAGE_SOUND_EFFECT = preload("res://assets/Enemy Damaged.wav")
+	$AudioStreamPlayer2D.stream = DAMAGE_SOUND_EFFECT
+	$AudioStreamPlayer2D.play()
+	
 	if health <= 0:
 		self.queue_free() # self destruct
 		# TODO: Score
+		
+		# death sound effect
+		# doesn't actually work because this object gets removed (sad)
+		const DEATH_SOUND_EFFECT = preload("res://assets/Explode.wav")
+		$AudioStreamPlayer2D.stream = DEATH_SOUND_EFFECT
+		$AudioStreamPlayer2D.play()

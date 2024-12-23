@@ -198,3 +198,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_05rk6")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_udwgu")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+volume_db = -30.0

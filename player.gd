@@ -44,12 +44,18 @@ func _input(event):
 		$Icon/AnimationPlayer.play("idle_down")
 		
 	if event is InputEventMouseButton and event.is_pressed():
+		# shoot
 		const BULLET = preload("res://bullet.tscn")
 		var new_bullet = BULLET.instantiate()
 		new_bullet.global_position = self.global_position
 		new_bullet.global_rotation = self.get_global_transform_with_canvas().get_origin().direction_to(event.position).angle()
 		
 		self.add_sibling(new_bullet)
+		
+		# shoot sound effect
+		const SHOOT_SOUND = preload("res://assets/Shoot.wav")
+		$AudioStreamPlayer2D.stream = SHOOT_SOUND
+		$AudioStreamPlayer2D.play()
 
 func take_damage(damage: float):
 	self.health -= damage

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwgcfviwjhwq8"
+path="res://.godot/imported/Enemy Damaged.wav-9f5dbc8b198379dedfc23334feef3e0f.sample"
+
+[deps]
+
+source_file="res://assets/Enemy Damaged.wav"
+dest_files=["res://.godot/imported/Enemy Damaged.wav-9f5dbc8b198379dedfc23334feef3e0f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

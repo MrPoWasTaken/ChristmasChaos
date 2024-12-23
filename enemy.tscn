@@ -80,3 +80,7 @@ frame = 4
 libraries = {
 "": SubResource("AnimationLibrary_4nu5h")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+volume_db = -22.595
