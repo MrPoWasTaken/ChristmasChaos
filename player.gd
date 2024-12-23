@@ -18,6 +18,9 @@ func _physics_process(delta: float) -> void:
 	
 	self.velocity = SPEED * direction
 	
+	self.position[0]= clamp(self.position[0],-1450,1450)
+	self.position[1]= clamp(self.position[1],-900,900)
+	
 	move_and_slide()
 	
 	for body in %DamageCollider.get_overlapping_bodies():
