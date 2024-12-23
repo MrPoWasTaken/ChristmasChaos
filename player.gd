@@ -11,6 +11,8 @@ var health = MAX_HEALTH
 @export
 var ENEMY_DPS = 10
 
+var kills = 0
+
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	
