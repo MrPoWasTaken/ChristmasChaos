@@ -12,14 +12,6 @@ offset_bottom = 296.0
 theme_override_font_sizes/normal_font_size = 100
 text = "Christmas Chaos"
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 453.0
-offset_top = 335.0
-offset_right = 694.0
-offset_bottom = 424.0
-text = "FIGHT"
-script = ExtResource("1_nprlf")
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 8.0
 offset_top = 550.0
@@ -43,5 +35,13 @@ text = "Controls:
 	Mouse for shoot
 
 Enjoy!"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 453.0
+offset_top = 335.0
+offset_right = 694.0
+offset_bottom = 424.0
+text = "FIGHT"
+script = ExtResource("1_nprlf")
 
 [connection signal="button_up" from="StartButton" to="StartButton" method="_on_button_up"]
