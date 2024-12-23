@@ -7,10 +7,8 @@ var SPEED = 150.0
 
 @export
 var MAX_HEALTH = 100
+
 var health = MAX_HEALTH
-
-
-signal enemy_death
 
 @onready
 var player: CharacterBody2D = get_node("/root/MainLevel/Player")
@@ -54,12 +52,11 @@ func take_damage(damage: float) -> void:
 	$AudioStreamPlayer2D.play()
 	
 	if health <= 0:
-		player.kills += 1
-		print("Kills: ", player.kills)
+		self.queue_free() # self destruct
+		# TODO: Score
+		
 		# death sound effect
 		# doesn't actually work because this object gets removed (sad)
 		const DEATH_SOUND_EFFECT = preload("res://assets/Explode.wav")
 		$AudioStreamPlayer2D.stream = DEATH_SOUND_EFFECT
 		$AudioStreamPlayer2D.play()
-		
-		self.queue_free() # self destruct
