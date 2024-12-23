@@ -8,6 +8,8 @@ var SPEED = 300.0
 var MAX_HEALTH = 100
 var health = MAX_HEALTH
 
+var kills = 0
+
 @export
 var ENEMY_DPS = 10
 
