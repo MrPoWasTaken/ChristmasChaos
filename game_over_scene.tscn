@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bemb5dghnjtpg"]
+[gd_scene load_steps=3 format=3 uid="uid://bemb5dghnjtpg"]
 
 [ext_resource type="AudioStream" uid="uid://brf4udiy7j5i" path="res://assets/silent night sad.wav" id="1_fesup"]
+[ext_resource type="Script" path="res://restart_button.gd" id="2_h787e"]
 
 [node name="GameOverScene" type="CanvasLayer"]
 
@@ -10,8 +11,18 @@ stream = ExtResource("1_fesup")
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 450.0
-offset_top = 254.0
-offset_right = 862.0
-offset_bottom = 490.0
+offset_left = 481.0
+offset_top = 265.0
+offset_right = 893.0
+offset_bottom = 501.0
 text = "YOU DIED (tough luck buddy)"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 453.0
+offset_top = 335.0
+offset_right = 694.0
+offset_bottom = 424.0
+text = "TRY AGAIN"
+script = ExtResource("2_h787e")
+
+[connection signal="button_up" from="RestartButton" to="RestartButton" method="_on_button_up"]
