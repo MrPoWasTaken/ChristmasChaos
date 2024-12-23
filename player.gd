@@ -21,7 +21,9 @@ func _physics_process(delta: float) -> void:
 	for body in %DamageCollider.get_overlapping_bodies():
 		var typed_body: Node2D = body
 		if typed_body.is_in_group("Enemies"):
-			self.take_damage(delta * ENEMY_DPS)
+			if self.take_damage(delta * ENEMY_DPS):
+				# this being true means died
+				return
 
 func _input(event):
 	# below code is disgusting btw
@@ -57,8 +59,14 @@ func _input(event):
 		$AudioStreamPlayer2D.stream = SHOOT_SOUND
 		$AudioStreamPlayer2D.play()
 
-func take_damage(damage: float):
+# returns true if died
+func take_damage(damage: float) -> bool:
 	self.health -= damage
+
 	if self.health <= 0:
 		# GAME OVER
-		get_tree().change_scene_to_file("res://game_over_scene.tscn")
+		get_tree().change_scene_to_file.call_deferred("res://game_over_scene.tscn")
+		get_tree().current_scene.free()
+		return true
+		
+	return false

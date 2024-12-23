@@ -21,6 +21,11 @@ func _ready() -> void:
 	print("SPEED:", SPEED)
 
 func _physics_process(delta: float) -> void:
+	if get_tree().get_nodes_in_group("Enemies").size() == 0 or !is_instance_valid(player):
+		# The scene is about to change, so don't do stuff that will cause errors
+		return
+	
+	
 	var player_direction = global_position.direction_to(player.global_position)
 	
 	self.velocity = SPEED * player_direction
@@ -28,6 +33,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _process(delta: float) -> void:
+	if get_tree().get_nodes_in_group("Enemies").size() == 0 or !is_instance_valid(player):
+		# The scene is about to change, so don't do stuff that will cause errors
+		return
+		
+
 	if (global_position.direction_to(player.global_position).x<0):
 		$Sprite2D/AnimationPlayer.play("walk_left")
 	else:
